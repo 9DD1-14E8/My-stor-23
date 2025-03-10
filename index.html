@@ -3,55 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store</title>
+    <title>Firebase Auth Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h2>Welcome to My Store</h2>
-        <div id="login-box">
-            <input type="text" id="username" placeholder="यूज़रनेम">
+        <h2>🔥 Firebase Store</h2>
+
+        <!-- 🔑 लॉगिन/रजिस्टर -->
+        <div id="auth-box">
+            <input type="email" id="email" placeholder="ईमेल">
             <input type="password" id="password" placeholder="पासवर्ड">
+            <button onclick="register()">रजिस्टर करें</button>
             <button onclick="login()">लॉगिन करें</button>
         </div>
 
+        <!-- 🛒 Store -->
         <div id="store" style="display: none;">
-            <h3>Products</h3>
+            <h3>🛍 Products</h3>
             <div class="products">
                 <div class="product">
-                    <img src="product1.jpg" alt="Product 1">
                     <h4>Product 1</h4>
                     <p>₹500</p>
                     <button onclick="addToCart('Product 1', 500)">Add to Cart</button>
                 </div>
-                <div class="product">
-                    <img src="product2.jpg" alt="Product 2">
-                    <h4>Product 2</h4>
-                    <p>₹800</p>
-                    <button onclick="addToCart('Product 2', 800)">Add to Cart</button>
-                </div>
             </div>
-
-            <button onclick="viewCart()">View Cart</button>
+            <button onclick="viewCart()">🛒 View Cart</button>
+            <button onclick="logout()">🚪 Logout</button>
         </div>
 
+        <!-- 🛍 Cart -->
         <div id="cart-page" style="display: none;">
             <h3>Your Cart</h3>
             <ul id="cart-items"></ul>
             <p>Total: ₹<span id="cart-total">0</span></p>
-            <button onclick="checkout()">Checkout</button>
-            <button onclick="backToStore()">Back</button>
-        </div>
-
-        <div id="checkout-page" style="display: none;">
-            <h3>Checkout</h3>
-            <p>Thank you for shopping! Your order has been placed.</p>
-            <button onclick="logout()">Logout</button>
+            <button onclick="checkout()">✅ Checkout</button>
+            <button onclick="backToStore()">🔙 Back</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
-
+    <script type="module" src="script.js"></script>
 </body>
 </html>
